@@ -32,4 +32,6 @@ echo "Install Playwright and allure-playwright"
 # Установка необходимых пакетов
 npm install -g playwright@latest
 
+npm init playwright@latest
+
 echo "Installation completed!"
