@@ -34,4 +34,6 @@ npm install -g playwright@latest
 
 npm init playwright@latest
 
+npx playwright install
+
 echo "Installation completed!"
