@@ -1,28 +1,17 @@
 export namespace s {
-    /** URL click */
-    export enum Click {
-        /** Кнопка для одинарного клика */
-        Btn = "[id='badButton']"
-    }
-
-    /** URL dinamicID */
-    export enum DinamicID {
-        /** Кнопка с динамическим ID */
-        Btn = "button:text('Button with Dynamic ID')"
-    }
-
-    /** URL classAttr */
-    export namespace ClassAttr {
-
-        /** Кнопки */
-        export enum Btn {
+    /** Кнопки */
+    export enum Btn {
         /** Кнопка Warning */
         Warning = ".btn-warning",
         /** Кнопка Success */
         Success = ".btn-success",
         /** Кнопка Primary */
-        Primary = ".btn-primary"
-        }
+        Primary = ".btn-primary",
+        /** Кнопка с динамическим ID */
+        BtnDinamicID = "button:text('Button with Dynamic ID')",
+        /** Кнопка для одинарного клика */
+        BtnClick = "[id='badButton']"
+
     }
  }
 

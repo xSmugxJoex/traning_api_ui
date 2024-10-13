@@ -3,7 +3,7 @@ import { Color, s } from '../../helpers/selectors/selectors';
 import { UrlGenerator, UrlUI } from '../../helpers/selectors/url';
 
 /** URL генератор для создания URL на основе базового адреса и параметров  */
-const urlGen = new UrlGenerator('http://uitestingplayground.com');
+const urlGen = new UrlGenerator("http://uitestingplayground.com");
 /** URL для клика по кнопке, сгенерированный на основе элемента интерфейса */
 const DinamicIDUrl = urlGen.generateUrl(UrlUI.UrlExt.DinamicID);
 
@@ -13,11 +13,11 @@ test("Клик по кнопке с динамическим ID", async ({page})
   await page.goto(DinamicIDUrl);
 
   // Проверка видимости кнопки
-  await expect(page.locator(s.DinamicID.Btn)).toBeVisible();
+  await expect(page.locator(s.Btn.BtnDinamicID)).toBeVisible();
 
   // Проверка цвета фона кнопки
-  await expect(page.locator(s.DinamicID.Btn)).toHaveCSS("background-color", Color.Btn.Default);
+  await expect(page.locator(s.Btn.BtnDinamicID)).toHaveCSS("background-color", Color.Btn.Default);
 
   // Выполнение клика по кнопке
-  await page.locator(s.DinamicID.Btn).click();
+  await page.locator(s.Btn.BtnDinamicID).click();
 })
