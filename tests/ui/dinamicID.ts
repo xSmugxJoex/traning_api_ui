@@ -5,24 +5,19 @@ import { UrlGenerator, UrlUI } from '../../helpers/selectors/url';
 /** URL генератор для создания URL на основе базового адреса и параметров  */
 const urlGen = new UrlGenerator('http://uitestingplayground.com');
 /** URL для клика по кнопке, сгенерированный на основе элемента интерфейса */
-const ClickUrl = urlGen.generateUrl(UrlUI.UrlExt.Click);
+const DinamicIDUrl = urlGen.generateUrl(UrlUI.UrlExt.DinamicID);
 
-test("Одиночный клик по кнопке ", async ({page}) => {
+
+test("Клик по кнопке с динамическим ID", async ({page}) => {
   // Переход на страницу с URL, сгенерированным ранее
-  await page.goto(ClickUrl);
+  await page.goto(DinamicIDUrl);
 
   // Проверка видимости кнопки
-  await expect(page.locator(s.Click.Btn)).toBeVisible();
+  await expect(page.locator(s.DinamicID.Btn)).toBeVisible();
 
   // Проверка цвета фона кнопки
-  await expect(page.locator(s.Click.Btn)).toHaveCSS("background-color", Color.Btn.Default);
+  await expect(page.locator(s.DinamicID.Btn)).toHaveCSS("background-color", Color.Btn.Default);
 
   // Выполнение клика по кнопке
-  await page.locator(s.Click.Btn).click();
-
-  // Проверка наличия класса после клика
-  await expect(page.locator(s.Click.Btn)).toHaveClass(".btn-success");
-
-  // Проверка цвета фона кнопки
-  await expect(page.locator(s.Click.Btn)).toHaveCSS("background-color", Color.Btn.Selected)
+  await page.locator(s.DinamicID.Btn).click();
 })

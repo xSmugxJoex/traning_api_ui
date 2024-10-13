@@ -28,3 +28,11 @@
 Для прогона тестов: 
 
     npx playwright test (/ui, /api, /db - опционально, если нужно запустить тесты в определенных папках)
+
+Для визуального прогона теста:
+
+    npx playwright test --headed
+
+Для открытия UI мода:
+
+    npx playwright test --ui
